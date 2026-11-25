@@ -27,7 +27,7 @@ export const Header = () => {
   return (
     <header className="site-header sticky top-0 z-50" data-testid="site-header">
       <div className="container-x flex h-20 items-center justify-between gap-5">
-        <Link to="/" data-testid="header-logo-link" aria-label="Dapper Innovations home"><Logo /></Link>
+        <Link to="/" data-testid="header-logo-link" aria-label="Dapper Innovations home"><Logo dark /></Link>
         <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation" data-testid="desktop-nav">
           {NAV.map((n) => (
             <NavLink key={n.to} to={n.to} className={linkCls} data-testid={`nav-${n.to.slice(1)}`}>{n.label}</NavLink>

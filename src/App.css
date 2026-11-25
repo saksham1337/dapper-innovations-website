@@ -266,6 +266,42 @@
 .enquiry-panel { border-top-color: var(--brand-red); }
 .enquiry-choice.is-selected { box-shadow: inset 3px 0 0 var(--brand-red); }
 
+/* Let the dark red palette carry through the full page, with light cards for contrast. */
+.site-shell {
+  background: radial-gradient(circle at 18% 28%, rgba(113, 19, 35, .21), transparent 32%), linear-gradient(150deg, #17181b 0%, #231318 48%, #111315 100%);
+  color: #f5f1f2;
+}
+.site-header { background: rgba(14, 14, 17, .97); border-bottom-color: #ffffff20; color: #f5f1f2; }
+.site-header .nav-link { color: #bbb6b8; }
+.site-header .nav-link:hover, .site-header .nav-link.is-active { color: white; }
+.site-header .header-cta { background: var(--brand-red); }
+.site-header .menu-toggle, .mobile-navigation, .mobile-navigation .nav-link { border-color: #ffffff30; }
+.site-shell main section.section[class~="bg-[#f5f5f5]"], .work-section, .services-pillar-grow { background: #1c191d; }
+.track-record { background: #20191c; border-bottom-color: #ffffff26; }
+.track-record .eyebrow, .stat-label, .process-note, .home-model-row p { color: #bbb5b8; }
+.site-shell main .stat-value { color: #f6f2f3; }
+.site-shell main [class~="text-[#111111]"] { color: #f5f1f2; }
+.site-shell main [class~="text-[#5b5b5b]"] { color: #bdb6ba; }
+.site-shell main :is(.case-card, .pricing-model, .enquiry-panel, .process-card, .pillar-content, [class~="bg-white"]) { color: #111111; }
+.site-shell main :is(.case-card, .pricing-model, .enquiry-panel, .process-card, .pillar-content, [class~="bg-white"]) [class~="text-[#111111]"] { color: #111111; }
+.site-shell main :is(.case-card, .pricing-model, .enquiry-panel, .process-card, .pillar-content, [class~="bg-white"]) [class~="text-[#5b5b5b]"] { color: #5b5b5b; }
+.site-shell main .case-card .stat-value, .site-shell main .pricing-model .stat-value { color: var(--ink); }
+.site-shell main .case-card .stat-label { color: #626262; }
+.site-shell main section.section, .services-pillar { border-color: #ffffff20; }
+.home-model-list, .home-model-row, .service-directory-row, .service-detail-block, .partner-sidebar ol li { border-color: #ffffff35; }
+.home-process-grid li:not(:last-child)::before { background: #ffffff40; }
+.process-dot { color: var(--ink); }
+.home-model-row:hover, .service-directory-row:hover, .editorial-faq > div[data-state=open] { background: #ffffff0e; }
+.model-rate { color: var(--brand-red-bright); }
+.ghost-button { color: #f5f1f2; border-color: #ffffff70; }
+.ghost-button:hover { background: #ffffff14; }
+.directory-arrow { border-color: #ffffff55; }
+.process-grid, .process-card { border-color: #ffffff35; }
+.process-card { background: #f4eff0; }
+.process-card:nth-child(3) { background: #ede6e8; }
+.process-card:nth-child(5) { background: #f1ebed; }
+.hairline-grid { background-image: linear-gradient(to right, #ffffff0d 1px, transparent 1px), linear-gradient(to bottom, #ffffff0d 1px, transparent 1px); }
+
 @media (min-width: 1600px) {
   .hero-layout { padding-top: 74px; padding-bottom: 72px; }
 }
