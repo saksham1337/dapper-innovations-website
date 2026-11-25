@@ -18,7 +18,7 @@ export const PageHero = ({ eyebrow, title, lead, children, testid = "page-hero" 
     <div className="container-x relative z-10 py-16 lg:py-24">
       <p className="eyebrow reveal" data-testid={`${testid}-eyebrow`}>{eyebrow}</p>
       <h1 className="reveal mt-6 max-w-4xl text-4xl sm:text-5xl lg:text-6xl font-extrabold" style={{ animationDelay: "80ms" }} data-testid={`${testid}-title`}>{title}</h1>
-      {lead && <p className="reveal mt-7 max-w-2xl text-base text-slate-300 leading-relaxed" style={{ animationDelay: "160ms" }} data-testid={`${testid}-lead`}>{lead}</p>}
+      {lead && <p className="reveal mt-7 max-w-2xl text-base text-neutral-300 leading-relaxed" style={{ animationDelay: "160ms" }} data-testid={`${testid}-lead`}>{lead}</p>}
       {children && <div className="reveal mt-9" style={{ animationDelay: "240ms" }}>{children}</div>}
     </div>
     <Asterisk className="page-hero-mark" />
@@ -30,8 +30,8 @@ export const SectionHead = ({ eyebrow, title, lead, action }) => (
   <div className="section-heading flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 lg:mb-14">
     <div className="max-w-2xl">
       <p className="eyebrow">{eyebrow}</p>
-      <h2 className="section-title mt-4 font-extrabold text-[#111418]">{title}</h2>
-      {lead && <p className="mt-5 max-w-xl text-base text-[#575B62] leading-relaxed">{lead}</p>}
+      <h2 className="section-title mt-4 font-extrabold text-[#111111]">{title}</h2>
+      {lead && <p className="mt-5 max-w-xl text-base text-[#5b5b5b] leading-relaxed">{lead}</p>}
     </div>
     {action}
   </div>
@@ -53,7 +53,7 @@ export const GhostBtn = ({ to, children, testid }) => (
 );
 
 export const TextLink = ({ to, children, testid }) => (
-  <Link to={to} data-testid={testid} className="group inline-flex items-center gap-1.5 text-sm font-medium text-[#111418]">
+  <Link to={to} data-testid={testid} className="group inline-flex items-center gap-1.5 text-sm font-medium text-[#111111]">
     <span className="link-underline">{children}</span>
     <ArrowUpRight size={15} className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
   </Link>

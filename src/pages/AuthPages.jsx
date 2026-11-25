@@ -3,7 +3,7 @@ import { SignIn, SignUp } from "@clerk/react";
 import { Logo } from "@/components/site/Logo";
 
 const Shell = ({ children }) => (
-  <div className="min-h-screen flex flex-col bg-[#F4F4F2]">
+  <div className="min-h-screen flex flex-col bg-[#f5f5f5]">
     <title>Team sign in | Dapper Innovations</title>
     <meta name="robots" content="noindex" />
     <div className="container-x h-16 flex items-center"><Link to="/" data-testid="auth-home-link"><Logo /></Link></div>

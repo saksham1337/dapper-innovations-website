@@ -15,24 +15,24 @@ const fmt = (iso) => new Date(iso).toLocaleString("en-US", { dateStyle: "medium"
 
 const Row = ({ e, onToggle, busy }) => {
   const [open, setOpen] = useState(false);
-  const Item = ({ k, v }) => <div><dt className="text-xs text-[#8A8F98]">{k}</dt><dd className="mt-1 text-sm text-[#111418] break-words">{v || "-"}</dd></div>;
+  const Item = ({ k, v }) => <div><dt className="text-xs text-[#8f8f8f]">{k}</dt><dd className="mt-1 text-sm text-[#111111] break-words">{v || "-"}</dd></div>;
   return (
     <li className="border-b border-border bg-white" data-testid={`enquiry-row-${e.id}`}>
       <div className="flex flex-wrap items-center gap-4 px-5 py-4">
         <button onClick={() => setOpen(!open)} className="flex-1 min-w-[220px] flex items-center gap-3 text-left" data-testid={`enquiry-expand-${e.id}`}>
-          <ChevronDown size={16} className={`text-[#8A8F98] transition-transform ${open ? "rotate-180" : ""}`} />
+          <ChevronDown size={16} className={`text-[#8f8f8f] transition-transform ${open ? "rotate-180" : ""}`} />
           <div>
-            <p className="text-sm font-semibold text-[#111418]">{e.agency} <span className="font-normal text-[#575B62]">/ {e.name}</span></p>
-            <p className="text-xs text-[#8A8F98] mt-0.5">{fmt(e.created_at)} · {e.country}</p>
+            <p className="text-sm font-semibold text-[#111111]">{e.agency} <span className="font-normal text-[#5b5b5b]">/ {e.name}</span></p>
+            <p className="text-xs text-[#8f8f8f] mt-0.5">{fmt(e.created_at)} · {e.country}</p>
           </div>
         </button>
         <Badge variant="outline" className="font-num text-[0.65rem]">{TYPE[e.form_type]}</Badge>
-        {e.nda && <Badge className="bg-[#0F172A] text-[0.65rem]">NDA requested</Badge>}
-        <Badge variant={e.status === "handled" ? "secondary" : "default"} className={e.status === "new" ? "bg-[#0D5940]" : ""} data-testid={`enquiry-status-${e.id}`}>
+        {e.nda && <Badge className="bg-[#0a0a0a] text-[0.65rem]">NDA requested</Badge>}
+        <Badge variant={e.status === "handled" ? "secondary" : "default"} className={e.status === "new" ? "bg-[#c91c1c]" : ""} data-testid={`enquiry-status-${e.id}`}>
           {e.status === "new" ? "New" : "Handled"}
         </Badge>
         <button disabled={busy} onClick={() => onToggle(e)} data-testid={`enquiry-toggle-${e.id}`}
-          className="rounded-full border border-border px-4 py-1.5 text-xs font-medium text-[#111418] hover:border-[#111418] transition-colors disabled:opacity-50">
+          className="rounded-full border border-border px-4 py-1.5 text-xs font-medium text-[#111111] hover:border-[#111111] transition-colors disabled:opacity-50">
           {e.status === "new" ? "Mark as handled" : "Mark as new"}
         </button>
       </div>
@@ -93,12 +93,12 @@ const InboxBody = () => {
     setBusyId(null);
   };
 
-  if (!me) return <div className="p-16 flex justify-center"><Loader2 className="animate-spin text-[#8A8F98]" /></div>;
+  if (!me) return <div className="p-16 flex justify-center"><Loader2 className="animate-spin text-[#8f8f8f]" /></div>;
   if (me.role !== "admin") {
     return (
       <div className="container-x py-24 max-w-xl" data-testid="inbox-no-access">
-        <h1 className="text-3xl font-semibold text-[#111418]">No access to the inbox</h1>
-        <p className="mt-4 text-[#575B62]">This area is for the Dapper Innovations team. If you should have access, ask an admin to grant it.</p>
+        <h1 className="text-3xl font-semibold text-[#111111]">No access to the inbox</h1>
+        <p className="mt-4 text-[#5b5b5b]">This area is for the Dapper Innovations team. If you should have access, ask an admin to grant it.</p>
         <Link to="/" className="mt-8 inline-block text-sm font-medium link-underline">Back to the website</Link>
       </div>
     );
@@ -110,8 +110,8 @@ const InboxBody = () => {
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <p className="eyebrow">Private</p>
-          <h1 className="mt-3 text-3xl lg:text-4xl font-semibold text-[#111418]">Enquiries</h1>
-          <p className="mt-2 text-sm text-[#575B62]" data-testid="inbox-count">{items.length} shown · {open} new</p>
+          <h1 className="mt-3 text-3xl lg:text-4xl font-semibold text-[#111111]">Enquiries</h1>
+          <p className="mt-2 text-sm text-[#5b5b5b]" data-testid="inbox-count">{items.length} shown · {open} new</p>
         </div>
         <Tabs value={view} onValueChange={setView}>
           <TabsList>
@@ -139,11 +139,11 @@ const InboxBody = () => {
             </Tabs>
           </div>
           <div className="mt-6 border-t border-x border-border">
-            {loading ? <div className="p-12 flex justify-center border-b border-border"><Loader2 className="animate-spin text-[#8A8F98]" /></div>
+            {loading ? <div className="p-12 flex justify-center border-b border-border"><Loader2 className="animate-spin text-[#8f8f8f]" /></div>
               : items.length === 0 ? (
                 <div className="p-12 text-center border-b border-border bg-white" data-testid="inbox-empty">
-                  <Mail className="mx-auto text-[#8A8F98]" />
-                  <p className="mt-3 text-sm text-[#575B62]">No enquiries match these filters yet.</p>
+                  <Mail className="mx-auto text-[#8f8f8f]" />
+                  <p className="mt-3 text-sm text-[#5b5b5b]">No enquiries match these filters yet.</p>
                 </div>
               ) : <ul data-testid="enquiry-list">{items.map((e) => <Row key={e.id} e={e} onToggle={toggle} busy={busyId === e.id} />)}</ul>}
           </div>
@@ -155,7 +155,7 @@ const InboxBody = () => {
 
 export default function Inbox() {
   return (
-    <div className="min-h-screen bg-[#F4F4F2]">
+    <div className="min-h-screen bg-[#f5f5f5]">
       <title>Enquiries | Dapper Innovations</title>
       <meta name="robots" content="noindex" />
       <header className="border-b border-border bg-white">

@@ -5,8 +5,8 @@ import { ClerkProvider } from "@clerk/react";
 // Brand Clerk here once: it styles sign-in, sign-up and the user menu.
 const appearance = {
   variables: {
-    colorPrimary: "#0F172A",
-    colorForeground: "#111418",
+    colorPrimary: "#0a0a0a",
+    colorForeground: "#111111",
     colorBackground: "#FFFFFF",
     fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
     borderRadius: "6px",

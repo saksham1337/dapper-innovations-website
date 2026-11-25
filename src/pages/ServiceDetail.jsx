@@ -11,7 +11,7 @@ import NotFound from "./NotFound";
 
 const Block = ({ title, children, testid }) => (
   <div className="service-detail-block border-t border-border py-12 grid lg:grid-cols-12 gap-6" data-testid={testid}>
-    <h2 className="lg:col-span-4 text-xl font-semibold text-[#111418]">{title}</h2>
+    <h2 className="lg:col-span-4 text-xl font-semibold text-[#111111]">{title}</h2>
     <div className="lg:col-span-8">{children}</div>
   </div>
 );
@@ -35,18 +35,18 @@ export default function ServiceDetail() {
       <section className="container-x py-10" data-testid={`service-detail-${s.slug}`}>
         <Block title="What's included" testid="service-included">
           <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
-            {s.included.map((x) => <li key={x} className="flex gap-3 text-[#111418] text-sm sm:text-base"><Check size={18} className="mt-0.5 shrink-0 text-[#0D5940]" />{x}</li>)}
+            {s.included.map((x) => <li key={x} className="flex gap-3 text-[#111111] text-sm sm:text-base"><Check size={18} className="mt-0.5 shrink-0 text-[#c91c1c]" />{x}</li>)}
           </ul>
         </Block>
         <Block title="How you resell it" testid="service-resell">
-          <p className="text-[#575B62] leading-relaxed max-w-2xl">{s.resell}</p>
+          <p className="text-[#5b5b5b] leading-relaxed max-w-2xl">{s.resell}</p>
         </Block>
         <Block title="Delivery flow" testid="service-flow">
           <ol className="grid sm:grid-cols-5 gap-5">
             {s.flow.map((f, i) => (
-              <li key={f} className="border-t-2 border-[#111418] pt-4">
-                <span className="font-num text-xs text-[#8A8F98]">0{i + 1}</span>
-                <p className="mt-2 text-sm text-[#111418] leading-snug">{f}</p>
+              <li key={f} className="border-t-2 border-[#111111] pt-4">
+                <span className="font-num text-xs text-[#8f8f8f]">0{i + 1}</span>
+                <p className="mt-2 text-sm text-[#111111] leading-snug">{f}</p>
               </li>
             ))}
           </ol>
@@ -54,20 +54,20 @@ export default function ServiceDetail() {
         <Block title="Turnaround and pricing" testid="service-terms">
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="border border-border bg-white p-6">
-              <p className="eyebrow !text-[#8A8F98]">Turnaround</p>
-              <p className="mt-3 text-[#111418]" data-testid="service-turnaround">{s.turnaround}</p>
+              <p className="eyebrow !text-[#8f8f8f]">Turnaround</p>
+              <p className="mt-3 text-[#111111]" data-testid="service-turnaround">{s.turnaround}</p>
             </div>
             <div className="border border-border bg-white p-6">
-              <p className="eyebrow !text-[#8A8F98]">Pricing</p>
-              <p className="mt-3 text-[#111418]" data-testid="service-pricing">{ON_REQUEST}</p>
-              <p className="mt-2 text-sm text-[#575B62]">Usually bought as: {models.map((m) => m.name).join(", ")}.</p>
+              <p className="eyebrow !text-[#8f8f8f]">Pricing</p>
+              <p className="mt-3 text-[#111111]" data-testid="service-pricing">{ON_REQUEST}</p>
+              <p className="mt-2 text-sm text-[#5b5b5b]">Usually bought as: {models.map((m) => m.name).join(", ")}.</p>
             </div>
           </div>
         </Block>
         {proof && (
           <Block title="Proof from real work" testid="service-proof">
-            <p className="text-sm text-[#575B62]">{proof.industry} / {proof.markets}</p>
-            <p className="mt-2 text-lg font-semibold text-[#111418]">{proof.title}</p>
+            <p className="text-sm text-[#5b5b5b]">{proof.industry} / {proof.markets}</p>
+            <p className="mt-2 text-lg font-semibold text-[#111111]">{proof.title}</p>
             <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
               {proof.stats.slice(0, 4).map((st, i) => <Stat key={st.label} {...st} testid={`service-proof-stat-${i}`} />)}
             </div>
@@ -78,10 +78,10 @@ export default function ServiceDetail() {
           <FaqList items={s.faq} prefix="service-faq" />
         </Block>
         <div className="border-t border-border pt-10 pb-6">
-          <p className="eyebrow !text-[#8A8F98] mb-4">Other services</p>
+          <p className="eyebrow !text-[#8f8f8f] mb-4">Other services</p>
           <div className="flex flex-wrap gap-2">
             {SERVICES.filter((x) => x.slug !== s.slug).map((x) => (
-              <Link key={x.slug} to={`/services/${x.slug}`} className="rounded-full border border-border bg-white px-4 py-2 text-sm text-[#575B62] hover:border-[#111418] hover:text-[#111418] transition-colors" data-testid={`other-service-${x.slug}`}>{x.name}</Link>
+              <Link key={x.slug} to={`/services/${x.slug}`} className="rounded-full border border-border bg-white px-4 py-2 text-sm text-[#5b5b5b] hover:border-[#111111] hover:text-[#111111] transition-colors" data-testid={`other-service-${x.slug}`}>{x.name}</Link>
             ))}
           </div>
         </div>

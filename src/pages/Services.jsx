@@ -26,8 +26,8 @@ export default function Services() {
               {servicesByPillar(p.key).map((s, idx) => (
                 <Reveal key={s.slug} delay={idx * 0.04}>
                   <Link to={`/services/${s.slug}`} data-testid={`service-card-${s.slug}`} className="service-directory-row group">
-                    <span className="font-num text-xs text-[#575B62]">0{idx + 1}</span>
-                    <div><h3 className="text-lg font-bold">{s.name}</h3><p className="mt-2 text-sm text-[#575B62] leading-relaxed">{s.short}</p></div>
+                    <span className="font-num text-xs text-[#5b5b5b]">0{idx + 1}</span>
+                    <div><h3 className="text-lg font-bold">{s.name}</h3><p className="mt-2 text-sm text-[#5b5b5b] leading-relaxed">{s.short}</p></div>
                     <span className="directory-arrow"><ArrowUpRight size={22} /></span>
                   </Link>
                 </Reveal>

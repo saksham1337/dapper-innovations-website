@@ -26,8 +26,8 @@ export default function About() {
           </div>
           <div className="lg:col-span-7 lg:pl-6">
             <p className="eyebrow">Track record</p>
-            <h2 className="mt-4 text-3xl lg:text-4xl font-semibold text-[#111418]">Real work across real industries.</h2>
-            <p className="mt-5 text-[#575B62] leading-relaxed">We have built more than 150 websites and run paid ads, social media, SEO and design for brands in consumer tech, education and automotive. We keep every one of those clients anonymous.</p>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-semibold text-[#111111]">Real work across real industries.</h2>
+            <p className="mt-5 text-[#5b5b5b] leading-relaxed">We have built more than 150 websites and run paid ads, social media, SEO and design for brands in consumer tech, education and automotive. We keep every one of those clients anonymous.</p>
             <div className="mt-10 grid grid-cols-2 gap-8">
               <Stat value="150+" label="Websites built" testid="about-stat-websites" />
               <Stat value="3" label="Industries: consumer tech, education, automotive" testid="about-stat-industries" />
@@ -37,14 +37,14 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="section bg-[#F4F4F2] border-t border-border">
+      <section className="section bg-[#f5f5f5] border-t border-border">
         <div className="container-x">
           <p className="eyebrow">Why agencies only</p>
           <div className="mt-10 grid lg:grid-cols-3 gap-5">
             {REASONS.map((r) => (
               <div key={r.title} className="border border-border bg-white p-8" data-testid={`about-reason-${r.title.split(" ")[0].toLowerCase()}`}>
-                <h3 className="text-xl font-semibold text-[#111418]">{r.title}</h3>
-                <p className="mt-3 text-sm text-[#575B62] leading-relaxed">{r.body}</p>
+                <h3 className="text-xl font-semibold text-[#111111]">{r.title}</h3>
+                <p className="mt-3 text-sm text-[#5b5b5b] leading-relaxed">{r.body}</p>
               </div>
             ))}
           </div>

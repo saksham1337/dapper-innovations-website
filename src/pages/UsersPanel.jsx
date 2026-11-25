@@ -26,11 +26,11 @@ export const UsersPanel = ({ auth }) => {
 
   return (
     <div className="mt-8 border border-border bg-white" data-testid="users-panel">
-      <p className="px-5 py-4 text-sm text-[#575B62] border-b border-border">People who have signed in. Admins can see the enquiries inbox; members cannot.</p>
+      <p className="px-5 py-4 text-sm text-[#5b5b5b] border-b border-border">People who have signed in. Admins can see the enquiries inbox; members cannot.</p>
       <ul>
         {data.users.map((u) => (
           <li key={u.user_id} className="flex flex-wrap items-center justify-between gap-4 px-5 py-4 border-b border-border last:border-0" data-testid={`user-row-${u.user_id}`}>
-            <span className="text-sm text-[#111418]">{u.email || u.user_id}</span>
+            <span className="text-sm text-[#111111]">{u.email || u.user_id}</span>
             <Select value={u.role} onValueChange={(r) => change(u.user_id, r)}>
               <SelectTrigger className="w-36" data-testid={`user-role-select-${u.user_id}`}><SelectValue /></SelectTrigger>
               <SelectContent>{data.roles.map((r) => <SelectItem key={r} value={r}>{r === "admin" ? "Admin" : "Member"}</SelectItem>)}</SelectContent>

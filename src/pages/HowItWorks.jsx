@@ -22,20 +22,20 @@ export default function HowItWorks() {
               <li key={s.title} className="process-card" data-testid={`how-step-${i}`}>
                 <span className="process-number" aria-hidden="true">0{i + 1}</span>
                 <span className="eyebrow">Step 0{i + 1}</span>
-                <h2 className="mt-2 text-2xl font-semibold text-[#111418]">{s.title}</h2>
-                <p className="mt-3 text-[#575B62] leading-relaxed max-w-sm">{s.body}</p>
+                <h2 className="mt-2 text-2xl font-semibold text-[#111111]">{s.title}</h2>
+                <p className="mt-3 text-[#5b5b5b] leading-relaxed max-w-sm">{s.body}</p>
               </li>
             ))}
           </ol>
         </div>
       </section>
-      <section className="section bg-[#F4F4F2] border-t border-border">
+      <section className="section bg-[#f5f5f5] border-t border-border">
         <div className="container-x grid lg:grid-cols-3 gap-5">
           {PILLARS.map((p) => (
             <div key={p.title} className="border border-border bg-white p-8" data-testid={`how-commitment-${p.title.toLowerCase()}`}>
-              <h2 className="text-xl font-semibold text-[#111418]">{p.title}</h2>
+              <h2 className="text-xl font-semibold text-[#111111]">{p.title}</h2>
               <ul className="mt-6 space-y-4">
-                {p.points.map((x) => <li key={x} className="flex gap-3 text-sm text-[#575B62] leading-relaxed"><span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#0D5940]" />{x}</li>)}
+                {p.points.map((x) => <li key={x} className="flex gap-3 text-sm text-[#5b5b5b] leading-relaxed"><span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#c91c1c]" />{x}</li>)}
               </ul>
             </div>
           ))}

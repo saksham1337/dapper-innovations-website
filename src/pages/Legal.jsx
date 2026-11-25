@@ -5,12 +5,12 @@ import { SITE } from "@/data/site";
 const Doc = ({ sections, notice }) => (
   <section className="section">
     <div className="container-x max-w-3xl">
-      {notice && <p className="mb-12 border border-[#CBD5E1] bg-[#EEF2F6] p-4 text-sm text-[#0F172A]" data-testid="legal-template-notice">{notice}</p>}
+      {notice && <p className="mb-12 border border-[#d4d4d4] bg-[#f1f1f1] p-4 text-sm text-[#0a0a0a]" data-testid="legal-template-notice">{notice}</p>}
       <div className="space-y-10">
         {sections.map(([h, body]) => (
           <div key={h}>
-            <h2 className="text-xl font-semibold text-[#111418]">{h}</h2>
-            <p className="mt-3 text-[#575B62] leading-relaxed">{body}</p>
+            <h2 className="text-xl font-semibold text-[#111111]">{h}</h2>
+            <p className="mt-3 text-[#5b5b5b] leading-relaxed">{body}</p>
           </div>
         ))}
       </div>

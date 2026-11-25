@@ -19,18 +19,18 @@ export default function Partner() {
               <p className="eyebrow">What happens next</p>
               <ol className="mt-5 space-y-5">
                 {NEXT.map((n, i) => (
-                  <li key={n} className="flex gap-4 text-sm text-[#111418] leading-relaxed">
-                    <span className="font-num text-[#0D5940]">0{i + 1}</span>{n}
+                  <li key={n} className="flex gap-4 text-sm text-[#111111] leading-relaxed">
+                    <span className="font-num text-[#c91c1c]">0{i + 1}</span>{n}
                   </li>
                 ))}
               </ol>
             </div>
             <div className="border-t border-border pt-8 space-y-3">
               {["NDA before any project", "Our name never reaches your client", "You own all work and files"].map((x) => (
-                <p key={x} className="flex gap-3 text-sm text-[#575B62]"><Check size={16} className="text-[#0D5940] mt-0.5" />{x}</p>
+                <p key={x} className="flex gap-3 text-sm text-[#5b5b5b]"><Check size={16} className="text-[#c91c1c] mt-0.5" />{x}</p>
               ))}
             </div>
-            <p className="text-sm text-[#575B62]">Prefer email? <a href={`mailto:${SITE.email}`} className="text-[#111418] link-underline" data-testid="partner-email-link">{SITE.email}</a></p>
+            <p className="text-sm text-[#5b5b5b]">Prefer email? <a href={`mailto:${SITE.email}`} className="text-[#111111] link-underline" data-testid="partner-email-link">{SITE.email}</a></p>
           </aside>
           <div className="enquiry-panel lg:col-span-8 p-6 sm:p-8 lg:p-10">
             <EnquiryForm type="partner" />

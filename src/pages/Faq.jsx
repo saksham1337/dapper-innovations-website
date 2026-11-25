@@ -13,7 +13,7 @@ export default function Faq() {
         <div className="container-x space-y-16">
           {FAQ_GROUPS.map((g, i) => (
             <div key={g.group} className="grid lg:grid-cols-12 gap-8" data-testid={`faq-group-${i}`}>
-              <h2 className="lg:col-span-4 text-xl lg:text-2xl font-semibold text-[#111418]">{g.group}</h2>
+              <h2 className="lg:col-span-4 text-xl lg:text-2xl font-semibold text-[#111111]">{g.group}</h2>
               <div className="lg:col-span-8"><FaqList items={g.items} prefix={`faq-${i}`} /></div>
             </div>
           ))}

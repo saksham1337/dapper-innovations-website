@@ -22,13 +22,13 @@ export default function Pricing() {
             {MODELS.map((m, i) => (
               <div key={m.key} className={`pricing-model ${m.key === "pilotProject" ? "pricing-pilot" : ""} p-8 lg:p-10`} data-testid={`pricing-model-${m.key}`}>
                 <div className="flex justify-between items-center"><span className="font-num text-xs">0{i + 1} / ENGAGEMENT</span>{m.key === "pilotProject" ? <span className="pilot-tag" data-testid="pricing-pilot-label">A GOOD PLACE TO START</span> : <ArrowUpRight size={24} />}</div>
-                <h3 className="mt-4 text-2xl font-semibold text-[#111418]">{m.name}</h3>
-                <p className="mt-1 text-[#111418]">{m.line}</p>
-                <p className="mt-4 text-sm text-[#575B62] leading-relaxed">{m.body}</p>
+                <h3 className="mt-4 text-2xl font-semibold text-[#111111]">{m.name}</h3>
+                <p className="mt-1 text-[#111111]">{m.line}</p>
+                <p className="mt-4 text-sm text-[#5b5b5b] leading-relaxed">{m.body}</p>
                 <div className="mt-7 border-t border-border pt-5">
-                  <p className="eyebrow !text-[#8A8F98] mb-3">Suits</p>
+                  <p className="eyebrow !text-[#8f8f8f] mb-3">Suits</p>
                   <div className="flex flex-wrap gap-2">
-                    {m.fits.map((f) => <span key={f} className="rounded-full bg-[#F4F4F2] px-3 py-1 text-xs text-[#575B62]">{f}</span>)}
+                    {m.fits.map((f) => <span key={f} className="rounded-full bg-[#f5f5f5] px-3 py-1 text-xs text-[#5b5b5b]">{f}</span>)}
                   </div>
                 </div>
                 <Link to="#rate-card" className="pricing-rate-link" data-testid={`pricing-request-${m.key}`}><span data-testid={`pricing-price-${m.key}`}>{priceFor(m.key)}</span><ArrowUpRight size={18} /></Link>
@@ -37,12 +37,12 @@ export default function Pricing() {
           </div>
         </div>
       </section>
-      <section id="rate-card" className="section scroll-mt-16 bg-[#F4F4F2] border-t border-border" data-testid="rate-card-section">
+      <section id="rate-card" className="section scroll-mt-16 bg-[#f5f5f5] border-t border-border" data-testid="rate-card-section">
         <div className="container-x grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <p className="eyebrow">Rate card</p>
-            <h2 className="mt-4 text-3xl lg:text-4xl font-semibold text-[#111418]">Get the partner rate card.</h2>
-            <p className="mt-4 text-[#575B62] leading-relaxed">Tell us what you sell and roughly how much. We will email you the rates that apply to your agency.</p>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-semibold text-[#111111]">Get the partner rate card.</h2>
+            <p className="mt-4 text-[#5b5b5b] leading-relaxed">Tell us what you sell and roughly how much. We will email you the rates that apply to your agency.</p>
           </div>
           <div className="enquiry-panel lg:col-span-8 p-6 sm:p-8 lg:p-10">
             <EnquiryForm type="rate_card" />

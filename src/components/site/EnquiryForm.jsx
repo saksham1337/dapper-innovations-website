@@ -31,9 +31,9 @@ const Field = ({ id, label, error, group = false, children }) => {
   const Wrapper = group ? "fieldset" : "div";
   return (
     <Wrapper className="space-y-2" aria-describedby={group && error ? `${id}-error` : undefined} aria-invalid={group ? !!error : undefined}>
-      {group ? <legend className="text-sm font-medium text-[#111418] mb-2">{label}</legend> : <Label htmlFor={id} className="text-sm font-medium text-[#111418]">{label}</Label>}
+      {group ? <legend className="text-sm font-medium text-[#111111] mb-2">{label}</legend> : <Label htmlFor={id} className="text-sm font-medium text-[#111111]">{label}</Label>}
       {children}
-      {error && <p id={`${id}-error`} role="alert" className="text-xs text-[#B42318]" data-testid={`error-${id}`}>{error}</p>}
+      {error && <p id={`${id}-error`} role="alert" className="text-xs text-[#b81818]" data-testid={`error-${id}`}>{error}</p>}
     </Wrapper>
   );
 };
@@ -93,10 +93,10 @@ export const EnquiryForm = ({ type = "partner" }) => {
 
   if (state === "success") {
     return (
-      <div className="border border-[#0D5940]/30 bg-[#0D5940]/5 p-8 lg:p-10" data-testid={`${p}-form-success`}>
-        <CheckCircle2 className="text-[#0D5940]" size={28} />
-        <h3 className="mt-4 text-2xl font-semibold text-[#111418]">Thanks. We have your details.</h3>
-        <p className="mt-3 text-[#575B62] leading-relaxed max-w-lg">
+      <div className="border border-[#c91c1c]/30 bg-[#c91c1c]/5 p-8 lg:p-10" data-testid={`${p}-form-success`}>
+        <CheckCircle2 className="text-[#c91c1c]" size={28} />
+        <h3 className="mt-4 text-2xl font-semibold text-[#111111]">Thanks. We have your details.</h3>
+        <p className="mt-3 text-[#5b5b5b] leading-relaxed max-w-lg">
           {full ? "We will reply by email to set up a discovery call." : "We will email you the partner rate card."}
           {full && v.nda && " We will send an NDA before asking for any client details."}
         </p>
@@ -147,14 +147,14 @@ export const EnquiryForm = ({ type = "partner" }) => {
           <Field id={`${p}-message`} label="Anything else we should know? (optional)" error={errors.message}>
             <Textarea id={`${p}-message`} {...fieldA11y("message")} rows={5} value={v.message} onChange={(e) => set("message", e.target.value)} data-testid={`${p}-message-input`} />
           </Field>
-          <label className="flex items-start gap-3 border border-border bg-[#F4F4F2] p-4 text-sm text-[#111418] cursor-pointer">
+          <label className="flex items-start gap-3 border border-border bg-[#f5f5f5] p-4 text-sm text-[#111111] cursor-pointer">
             <Checkbox className="mt-0.5" checked={v.nda} onCheckedChange={(c) => set("nda", !!c)} data-testid={`${p}-nda-checkbox`} />
             Please send an NDA before we share client details.
           </label>
         </>
       )}
       {state === "error" && (
-        <div className="flex items-center gap-3 border border-[#B42318]/30 bg-[#B42318]/5 p-4 text-sm text-[#B42318]" data-testid={`${p}-form-error`}>
+        <div className="flex items-center gap-3 border border-[#b81818]/30 bg-[#b81818]/5 p-4 text-sm text-[#b81818]" data-testid={`${p}-form-error`}>
           <AlertCircle size={18} /> Something went wrong sending your details. Please try again, or email contact@dapperinnovations.com.
         </div>
       )}

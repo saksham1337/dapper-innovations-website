@@ -6,24 +6,24 @@ import { SERVICES } from "@/data/services";
 
 const Col = ({ title, links }) => (
   <div>
-    <p className="eyebrow !text-[#8A8F98] mb-4">{title}</p>
+    <p className="eyebrow !text-[#8f8f8f] mb-4">{title}</p>
     <ul className="space-y-2.5">
       {links.map(([to, label]) => (
-        <li key={to}><Link to={to} className="text-sm text-slate-300 hover:text-white transition-colors" data-testid={`footer-link-${to.replace(/\//g, "-").slice(1) || "home"}`}>{label}</Link></li>
+        <li key={to}><Link to={to} className="text-sm text-neutral-300 hover:text-white transition-colors" data-testid={`footer-link-${to.replace(/\//g, "-").slice(1) || "home"}`}>{label}</Link></li>
       ))}
     </ul>
   </div>
 );
 
 export const Footer = () => (
-  <footer className="bg-[#0C0E12] text-slate-300" data-testid="site-footer">
+  <footer className="bg-[#0a0a0a] text-neutral-300" data-testid="site-footer">
     <div className="container-x footer-masthead" aria-hidden="true">GOOD WORK.<br /><span>YOUR NAME ON IT.</span><ArrowUpRight /></div>
     <div className="container-x py-16 grid gap-12 lg:grid-cols-12">
       <div className="lg:col-span-4 space-y-5">
         <Logo dark />
-        <p className="text-sm leading-relaxed text-slate-400 max-w-xs">{SITE.promise} White-label delivery for agencies in {SITE.markets}.</p>
+        <p className="text-sm leading-relaxed text-neutral-400 max-w-xs">{SITE.promise} White-label delivery for agencies in {SITE.markets}.</p>
         <a href={`mailto:${SITE.email}`} className="text-sm text-white link-underline" data-testid="footer-email">{SITE.email}</a>
-        <p className="text-sm text-slate-400">{SITE.location}</p>
+        <p className="text-sm text-neutral-400">{SITE.location}</p>
       </div>
       <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-10">
         <Col title="Services" links={[...SERVICES.slice(0, 5).map((s) => [`/services/${s.slug}`, s.name]), ["/services", "All nine services"]]} />
@@ -32,7 +32,7 @@ export const Footer = () => (
       </div>
     </div>
     <div className="border-t border-white/10">
-      <div className="container-x py-6 text-xs text-slate-400 flex flex-col sm:flex-row justify-between gap-2">
+      <div className="container-x py-6 text-xs text-neutral-400 flex flex-col sm:flex-row justify-between gap-2">
         <span>&copy; {new Date().getFullYear()} Dapper Innovations. All rights reserved.</span>
         <span className="font-num">DAPPER INNOVATIONS</span>
       </div>

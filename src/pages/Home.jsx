@@ -84,7 +84,7 @@ const Guarantees = () => (
       <Reveal className="guarantee-intro">
         <p className="eyebrow">The white-label promise</p>
         <h2 className="section-title mt-5">Your agency.<br />Your clients.<br /><span>Your spotlight.</span></h2>
-        <p className="mt-6 text-sm leading-relaxed text-slate-400 max-w-xs">We do the work. You take the credit. That's not a feature—it's the entire point.</p>
+        <p className="mt-6 text-sm leading-relaxed text-neutral-400 max-w-xs">We do the work. You take the credit. That's not a feature—it's the entire point.</p>
         <div className="confidential-seal"><ShieldCheck size={28} /><span>100% WHITE-LABEL<br /><strong>BY DESIGN. BY DEFAULT.</strong></span></div>
       </Reveal>
       <div className="guarantee-grid">
@@ -136,7 +136,7 @@ const Models = () => (
 );
 
 const Proof = () => (
-  <section className="section bg-[#F4F4F2] border-y border-border" data-testid="home-proof">
+  <section className="section bg-[#f5f5f5] border-y border-border" data-testid="home-proof">
     <div className="container-x">
       <SectionHead eyebrow="Real results, anonymized" title="We keep our clients' names private. Yours too." lead="Every number below comes from real accounts we have delivered. No money figures, no client names." action={<TextLink to="/work" testid="proof-all-work">All case studies</TextLink>} />
       <div className="grid lg:grid-cols-2 gap-5">
@@ -151,7 +151,7 @@ const FaqTeaser = () => (
     <div className="container-x grid lg:grid-cols-12 gap-12">
       <div className="lg:col-span-4">
         <p className="eyebrow">Questions</p>
-        <h2 className="mt-4 text-3xl lg:text-4xl font-semibold text-[#111418]">What agencies ask first.</h2>
+        <h2 className="mt-4 text-3xl lg:text-4xl font-semibold text-[#111111]">What agencies ask first.</h2>
         <div className="mt-6"><TextLink to="/faq" testid="faq-teaser-all">Read every answer</TextLink></div>
       </div>
       <div className="lg:col-span-8">
